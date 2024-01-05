@@ -4,9 +4,8 @@ var utils = require('./utils')
 var config = require('../config')
 var VueLoaderPlugin = require('vue-loader/lib/plugin')
 var vueLoaderConfig = require('./vue-loader.conf')
-var StylelintPlugin = require('stylelint-webpack-plugin')
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
@@ -34,12 +33,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|vue)$/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
+        test: /\.mjs$/,
+        include: /node_modules/,
         include: [resolve('src'), resolve('test')],
-        options: {
-          formatter: require('eslint-friendly-formatter')
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env']
+          }
         }
       },
       {
@@ -99,9 +100,6 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
-    new StylelintPlugin({
-      files: ['**/*.vue', '**/*.scss']
-    }),
     new webpack.DefinePlugin({
       VERSION: JSON.stringify(require('../package.json').version)
     })
