@@ -107,7 +107,8 @@ export default {
     this.getServerConf();
   },
   async getServerConf() {
-    if (!store.state.offline && !isConfLoading && !isConfLoaded) {
+    let isServer = location.host.includes('http');
+    if (isServer && !store.state.offline && !isConfLoading && !isConfLoaded) {
       try {
         isConfLoading = true;
         const res = await this.request({ url: 'conf' });

@@ -9,6 +9,13 @@ exports.assetsPath = function (_path) {
   return path.posix.join(assetsSubDirectory, _path)
 }
 
+exports.fontsPath = function (_path) {
+  var assetsSubDirectory = process.env.NODE_ENV === 'production'
+    ? config.build.fontsPublicPath
+    : config.dev.assetsSubDirectory
+  return path.posix.join(assetsSubDirectory, _path)
+}
+
 exports.cssLoaders = function (options) {
   options = options || {}
 

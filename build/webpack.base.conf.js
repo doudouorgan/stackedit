@@ -89,7 +89,7 @@ module.exports = {
         test: /\.(ttf|eot|otf|woff2?)(\?.*)?$/,
         loader: 'file-loader',
         options: {
-          name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+          name: utils.fontsPath('fonts/[name].[hash:7].[ext]')
         }
       },
       {

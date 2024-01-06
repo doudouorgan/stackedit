@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import '../styles/layout.scss'
 import '../styles';
 import '../styles/markdownHighlighting.scss';
 import '../styles/app.scss';
@@ -29,6 +30,7 @@ const themeClasses = {
 };
 
 export default {
+  name: 'stack-edit',
   components: {
     Layout,
     Modal,
@@ -37,7 +39,7 @@ export default {
     SplashScreen,
   },
   data: () => ({
-    ready: false,
+    ready: true,
   }),
   computed: {
     classes() {

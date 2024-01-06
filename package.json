@@ -1,6 +1,6 @@
 {
-  "name": "stackedit",
-  "version": "5.15.4",
+  "name": "doudou-stackedit",
+  "version": "5.15.5",
   "description": "Free, open-source, full-featured Markdown editor",
   "author": "Benoit Schweblin",
   "license": "Apache-2.0",
@@ -13,6 +13,7 @@
     "start": "node build/dev-server.js",
     "build": "node build/build.js && npm run build-style",
     "build-style": "webpack --config build/webpack.style.conf.js",
+    "package": "npm run build --target lib ./packages/index.js --name stack-edit --dest lib",
     "lint": "eslint --ext .js,.vue src server",
     "unit": "jest --config test/unit/jest.conf.js --runInBand",
     "unit-with-coverage": "jest --config test/unit/jest.conf.js --runInBand --coverage",

@@ -6,6 +6,20 @@
 
 https://stackedit.io/
 
+### 起因
+- 原版限制了仅在stackedit.js下部署服务器使用
+- 需要在electron本地单独运行该项目
+- 需要更多配置项控制编辑器呈现
+- 需要支持按vue组件引入
+
+### 改造
+- 离线版本运行，支持在项目内嵌入
+
+### TODO
+ -[] 支持import导入
+ -[] 支持更多配置界面布局配置
+ -[] 支持vue组件嵌入
+
 ### Ecosystem
 
 - [Chrome app](https://chrome.google.com/webstore/detail/iiooodelglhkcpgbajoejffhijaclcdg)
